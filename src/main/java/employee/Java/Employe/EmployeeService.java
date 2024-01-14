@@ -1,35 +1,16 @@
 package employee.Java.Employe;
-
-import employee.Java.Employe.Exception.EmployeeAlreadyAddedException;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import java.util.Collection;
+import java.util.Collections;
 
 @Service
 public interface EmployeeService {
+    Employee add(String firstName, String lastName);
 
-    static String addEmployee(String firstName, String lastName) {
-        return firstName;
-    }
+    Employee remove (String firstName, String lastName);
 
-    static String removeEmployee(String firstName, String lastName) {
-        return firstName;
-    }
+    Employee find (String firstName, String lastName);
 
-    static String findEmployee(String firstName, String lastName) {
-        return firstName;
-    }
-
-    Employee add(String name, String lastName)
-            throws EmployeeNotFoundException, EmployeeAlreadyAddedException;
-
-    Employee remove (String name, String lastName)
-            throws EmployeeNotFoundException;
-
-    Employee find (String name, String lastName)
-            throws EmployeeNotFoundException;
-
-
-
-    List<Employee> getAll();
-
+    Collection<Employee> findAll();
 }
