@@ -12,6 +12,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeServiceImpl() {
         this.employeeList = new ArrayList<>();
     }
+
     @Override
     public Employee add(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
@@ -21,6 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeList.add(employee);
         return employee;
     }
+
     @Override
     public Employee remove(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
@@ -42,5 +44,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Collection<Employee> findAll() {
         return new ArrayList<>(employeeList);
+    }
+
+    @Override
+    public Employee add(String firstName, String lastName, int department, int salary) {
+        return null;
     }
 }

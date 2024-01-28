@@ -1,4 +1,6 @@
-package employee.Java.Employe;
+package employee.Java.Employe.controller;
+import employee.Java.Employe.Employee;
+import employee.Java.Employe.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +18,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName){
-        return employeeService.add(firstName, lastName);
+    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName,
+                                @RequestParam int department, @RequestParam int salary){
+        return employeeService.add(firstName, lastName, department, salary);
     }
 
     @GetMapping("/remove")
