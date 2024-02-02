@@ -14,6 +14,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee add(String firstName, String lastName, int department, int salary) {
+        Employee employee = new Employee(firstName, lastName);
+        if (employeeList.contains(employee)) {
+            throw new EmployeeAlreadyAddedException();
+        }
+        employeeList.add(employee);
+        return employee;
+    }
+
+    @Override
     public Employee add(String firstName, String lastName) {
         Employee employee = new Employee(firstName, lastName);
         if (employeeList.contains(employee)) {
@@ -46,8 +56,17 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new ArrayList<>(employeeList);
     }
 
-    @Override
-    public Employee add(String firstName, String lastName, int department, int salary) {
-        return null;
-    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+    /**/
