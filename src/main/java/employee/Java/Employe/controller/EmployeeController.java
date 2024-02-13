@@ -20,7 +20,7 @@ public class EmployeeController {
 
     @GetMapping("/add")
     public Employee addEmployee (String firstName,String lastName,int department, int salary){
-        if (!StringUtils.isAlpha(firstName) || !StringUtils.isAlpha(lastName)) {
+        if (!StringUtils.isAlpha(firstName) && !StringUtils.isAlpha(lastName)) {
             throw new EmployeeNotFoundException();
         }
         return employeeService.add(firstName, lastName, department, salary);
@@ -28,7 +28,7 @@ public class EmployeeController {
 
     @GetMapping("/remove")
     public Employee removeEmployee(String firstName, String lastName){
-        if (!StringUtils.isAlpha(firstName) || !StringUtils.isAlpha(lastName)) {
+        if (!StringUtils.isAlpha(firstName) && !StringUtils.isAlpha(lastName)) {
             throw new EmployeeNotFoundException();
         }
             return employeeService.remove(firstName, lastName);
